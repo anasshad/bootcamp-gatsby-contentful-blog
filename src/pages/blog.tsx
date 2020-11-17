@@ -3,6 +3,7 @@ import { graphql, Link } from 'gatsby'
 import Img from "gatsby-image"
 
 import Layout from "../components/layout"
+import SEO from "../components/seo"
 
 import './blog.css'
 
@@ -13,6 +14,7 @@ interface BlogProps {
 const Blog: React.FC<BlogProps> = ({ data }) => {
     return (
         <Layout>
+            <SEO title="Blog"/>
             <div>{
                 data.allContentfulBlogPost.edges.map(({ node }, index) => {
                     return (

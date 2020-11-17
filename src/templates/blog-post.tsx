@@ -4,6 +4,7 @@ import { BLOCKS, MARKS } from "@contentful/rich-text-types"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
 import Layout from "../components/layout"
+import SEO from "../components/seo"
 
 import './blog-post.css'
 
@@ -23,6 +24,7 @@ const Post = ({data}) => {
     console.log(data);
     return(
         <Layout>
+            <SEO title={data.contentfulBlogPost.postTitle}/>
         <div className="post">
             <div><h1>{data.contentfulBlogPost.postTitle}</h1></div>
             <div className="post-excerpt">{data.contentfulBlogPost.excerpt.excerpt}</div>
